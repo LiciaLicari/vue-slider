@@ -29,20 +29,8 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevImage"></div>
                     <div class="next" @click="nextImage"></div>
-                    <div class="thumb active">
-                        <img src="./assets/img/01.webp" alt="{{slides[activeImage].title}}" />
-                    </div>
-                    <div class="thumb">
-                        <img src="./assets/img/02.webp" alt="{{slides[activeImage].title}}" />
-                    </div>
-                    <div class="thumb">
-                        <img src="./assets/img/03.webp" alt="{{slides[activeImage].title}}" />
-                    </div>
-                    <div class="thumb">
-                        <img src="./assets/img/04.webp" alt="{{slides[activeImage].title}}" />
-                    </div>
-                    <div class="thumb">
-                        <img src="./assets/img/05.webp" alt="{{slides[activeImage].title}}" />
+                    <div class="thumb" :class="[i === activeImage ? 'active' : '']" v-for="(slide, i) in slides" @click="viewThis(i)">
+                        <img :src="slide.image" :key="i">
                     </div>
                 </div>
 
