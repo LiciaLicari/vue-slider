@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-<body>
+<body style="background-color: dimgrey;">
 
     <div id="app">
 
@@ -17,35 +17,32 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img src="img/01.webp" alt="Spiderman" />
+                    <img :src="slides[activeImage].image" alt="Spiderman" />
                     <div class="text">
-                        <h3>Spiderman</h3>
+                        <h3>{{slides[activeImage].title}}</h3>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
+                            {{slides[activeImage].text}}
                         </p>
                     </div>
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
+                    <div class="prev" @click="prevImage"></div>
+                    <div class="next" @click="nextImage"></div>
                     <div class="thumb active">
-                        <img src="img/01.webp" alt="Svezia" />
+                        <img src="./assets/img/01.webp" alt="{{slides[activeImage].title}}" />
                     </div>
                     <div class="thumb">
-                        <img src="img/02.webp" alt="Ratchet & Clank" />
+                        <img src="./assets/img/02.webp" alt="{{slides[activeImage].title}}" />
                     </div>
                     <div class="thumb">
-                        <img src="img/03.webp" alt="Fortnite" />
+                        <img src="./assets/img/03.webp" alt="{{slides[activeImage].title}}" />
                     </div>
                     <div class="thumb">
-                        <img src="img/04.webp" alt="Stray" />
+                        <img src="./assets/img/04.webp" alt="{{slides[activeImage].title}}" />
                     </div>
                     <div class="thumb">
-                        <img src="img/05.webp" alt="Avengers" />
+                        <img src="./assets/img/05.webp" alt="{{slides[activeImage].title}}" />
                     </div>
                 </div>
 
