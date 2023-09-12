@@ -41,6 +41,13 @@ createApp({
 
         };
     },
+
+    created() {
+        console.log("created");
+        this.play();
+
+    },
+
     methods: {
         nextImage() {
             this.activeImage++;
@@ -62,19 +69,18 @@ createApp({
         },
         resetPlay() {
             clearInterval(this.timer);
-            this.play();
-          },
+        },
+        
         play() {
+            console.log("play");
             let app = this;
-            this.timer = setInterval(function() {
-              app.nextImage();
+            this.timer = setInterval(function () {
+                app.nextImage();
             }, 3000);
-          },
-        created() {
-            this.play();
-          }
-    }
 
+        },
+    }
+    
 }).mount('#app');
 
 
