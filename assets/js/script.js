@@ -46,22 +46,38 @@ createApp({
             this.activeImage++;
             if (this.activeImage > this.slides.length - 1) {
                 this.activeImage = 0;
+                this.resetPlay();
             }
         },
         prevImage() {
             this.activeImage--;
             if (this.activeImage < 0) {
                 this.activeImage = this.slides.length - 1;
+                this.resetPlay();
             }
         },
         showImg(index) {
             this.activeImage = index;
-        }
+            this.resetPlay();
+        },
+        resetPlay() {
+            clearInterval(this.timer);
+            this.play();
+          },
+        play() {
+            let app = this;
+            this.timer = setInterval(function() {
+              app.nextImage();
+            }, 3000);
+          },
+        created() {
+            this.play();
+          }
     }
 
 }).mount('#app');
 
-console.log(slides);
+
 
 
 
